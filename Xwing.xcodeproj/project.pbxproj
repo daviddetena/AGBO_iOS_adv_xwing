@@ -12,6 +12,10 @@
 		597C13631AD332FD00B42108 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597C13621AD332FD00B42108 /* Images.xcassets */; };
 		597C13661AD332FD00B42108 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597C13641AD332FD00B42108 /* LaunchScreen.xib */; };
 		597C13721AD332FD00B42108 /* XwingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 597C13711AD332FD00B42108 /* XwingTests.m */; };
+		597C137E1AD3331E00B42108 /* DTCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597C137C1AD3331E00B42108 /* DTCMainViewController.m */; };
+		597C137F1AD3331E00B42108 /* DTCMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597C137D1AD3331E00B42108 /* DTCMainViewController.xib */; };
+		597C13821AD334BB00B42108 /* space.png in Resources */ = {isa = PBXBuildFile; fileRef = 597C13801AD334BB00B42108 /* space.png */; };
+		597C13881AD336CA00B42108 /* xwing.png in Resources */ = {isa = PBXBuildFile; fileRef = 597C13871AD336CA00B42108 /* xwing.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,11 @@
 		597C136B1AD332FD00B42108 /* XwingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XwingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		597C13701AD332FD00B42108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597C13711AD332FD00B42108 /* XwingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XwingTests.m; sourceTree = "<group>"; };
+		597C137B1AD3331E00B42108 /* DTCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCMainViewController.h; sourceTree = "<group>"; };
+		597C137C1AD3331E00B42108 /* DTCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCMainViewController.m; sourceTree = "<group>"; };
+		597C137D1AD3331E00B42108 /* DTCMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCMainViewController.xib; sourceTree = "<group>"; };
+		597C13801AD334BB00B42108 /* space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = space.png; sourceTree = "<group>"; };
+		597C13871AD336CA00B42108 /* xwing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xwing.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +85,11 @@
 		597C135A1AD332FD00B42108 /* Xwing */ = {
 			isa = PBXGroup;
 			children = (
+				597C13801AD334BB00B42108 /* space.png */,
+				597C13871AD336CA00B42108 /* xwing.png */,
 				597C135F1AD332FD00B42108 /* AppDelegate.h */,
 				597C13601AD332FD00B42108 /* AppDelegate.m */,
+				597C13841AD334F700B42108 /* Controllers */,
 				597C13621AD332FD00B42108 /* Images.xcassets */,
 				597C13641AD332FD00B42108 /* LaunchScreen.xib */,
 				597C135B1AD332FD00B42108 /* Supporting Files */,
@@ -109,6 +121,16 @@
 				597C13701AD332FD00B42108 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		597C13841AD334F700B42108 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				597C137B1AD3331E00B42108 /* DTCMainViewController.h */,
+				597C137C1AD3331E00B42108 /* DTCMainViewController.m */,
+				597C137D1AD3331E00B42108 /* DTCMainViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597C13821AD334BB00B42108 /* space.png in Resources */,
 				597C13661AD332FD00B42108 /* LaunchScreen.xib in Resources */,
+				597C13881AD336CA00B42108 /* xwing.png in Resources */,
+				597C137F1AD3331E00B42108 /* DTCMainViewController.xib in Resources */,
 				597C13631AD332FD00B42108 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +237,7 @@
 			files = (
 				597C13611AD332FD00B42108 /* AppDelegate.m in Sources */,
 				597C135E1AD332FD00B42108 /* main.m in Sources */,
+				597C137E1AD3331E00B42108 /* DTCMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
