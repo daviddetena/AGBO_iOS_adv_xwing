@@ -22,13 +22,13 @@
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    // Creamos detector de Tap
+    // Create Tap recognizer
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
     
-    // Creamos reconocedor de Swipe
+    // Create Swipe recognizer
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
     
-    // Los añadimos
+    // Add them to the current view
     [self.view addGestureRecognizer:tap];
     [self.view addGestureRecognizer:swipe];
 }
@@ -41,10 +41,10 @@
 #pragma mark - Recognizers
 -(void) didTap:(UITapGestureRecognizer *)tap{
     
-    // El BeginFromCurrentState lo hace por defecto. Lo ponemos explícitamente
+    // Set the options desired for the animation
     UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut;
     
-    // Animación de traslación (cambio de posición)
+    // Set the animation desired: in this case, we want a traslation (move from A to B)
     [UIView animateWithDuration:1
                           delay:0
                         options:options
@@ -53,19 +53,19 @@
                          self.xwingView.center = [tap locationInView:self.spaceView];
                      } completion:
      ^(BOOL finished) {
-         // Finished indica si ha llegado al final de la animación con éxito, ya que
-         // puede ser interrumpida por el usuario y en ese caso iniciar otra animación
-         // Esto de aquí no se anima. En este caso no hacemos nada
+         // Finished tells if the animation has finished successfully,
+         // since it might be interrupted by the user and hence start another animation.
+         // We do nothing in this case
      }];
 
-    // Rotación
+    // Rotate the X-wing PI/2 for a 0.5s animation and then
     [UIView animateWithDuration:0.5
                           delay:0
                         options:0
                      animations:^{
                          self.xwingView.transform = CGAffineTransformMakeRotation(M_2_PI);
                      } completion:^(BOOL finished) {
-                         // Al terminar hago otra de 0.5seg que acabe en el ángulo inicial
+                         // Turn back to its initial point in an 0.5s animation
                          [UIView animateWithDuration:0.5
                                                delay:0
                                              options:0
@@ -79,33 +79,32 @@
 
 - (void) didSwipe:(UISwipeGestureRecognizer *) swipe{
 
-    // Obtenemos dimensiones de la vista
+    // Grab view bounds
     CGSize viewSize = self.view.bounds.size;
     
-    // Generamos numeros aleatorios desde (0,ancho_vista-10) y
-    // desde (0,alto_vista-10)
+    // Generate random numbers from (0, view_width-10) and (0, view_height-10)
     int randomX = (arc4random() % ((int)viewSize.width)-10);
     int randomY = (arc4random() % ((int)viewSize.height)-10);
     
-    // CGFloat con esos valores aleatorios y punto con esos CGFloat
+    // Create CGFloat with previuos values and create the new point
     CGFloat ranX = (float)randomX;
     CGFloat ranY = (float)randomY;
     CGPoint newPoint = CGPointMake(ranX,ranY);
     
     if (swipe.state == UIGestureRecognizerStateRecognized) {
-        // Hacemos animación de opacidad
+        // Perform animation for changing the opacity to make X-Wing disappear
         UIViewAnimationOptions optionsXwing = 0;
         [UIView animateWithDuration:1
                               delay:0
                             options:optionsXwing
                          animations:^{
-                             // Animamos opacidad del xwing al pasar a 0
+                             // alpha=0 => X-Wing disappear
                              self.xwingView.alpha = 0;
                          } completion:^(BOOL finished) {
-                             // Al completarse animación cambiamos el centro a la nueva posición aleatoria
+                             // Move X-Wing to new point when animation finished
                              self.xwingView.center = newPoint;
                              
-                             // Pasado 1 segundo iniciamos animación para devolver el alfa a 1
+                             // We want the X-Wing to re-appear after 1s => alpha=1
                              [UIView animateWithDuration:1
                                                    delay:1
                                                  options:0
@@ -115,7 +114,7 @@
                                                   //
                                               }];
                          }];
-    }        
+    }
 }
 
 @end

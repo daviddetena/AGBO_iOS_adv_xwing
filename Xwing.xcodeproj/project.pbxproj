@@ -182,9 +182,11 @@
 				TargetAttributes = {
 					597C13571AD332FD00B42108 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = QF5L9JVR92;
 					};
 					597C136A1AD332FD00B42108 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = QF5L9JVR92;
 						TestTargetID = 597C13571AD332FD00B42108;
 					};
 				};
@@ -351,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QF5L9JVR92;
 				INFOPLIST_FILE = Xwing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QF5L9JVR92;
 				INFOPLIST_FILE = Xwing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -371,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = QF5L9JVR92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -390,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = QF5L9JVR92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -420,6 +426,7 @@
 				597C13771AD332FD00B42108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		597C13781AD332FD00B42108 /* Build configuration list for PBXNativeTarget "XwingTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +435,7 @@
 				597C137A1AD332FD00B42108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
